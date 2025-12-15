@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Bea's E-Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="sidebar">
+        <button class="spiral-btn" onclick="showContent('intro')">Introduction</button>
+        <button class="spiral-btn" onclick="showContent('ack')">Acknowledgements</button>
+        <button class="spiral-btn" onclick="showContent('cv')">Curriculum Vitae</button>
+        <button class="spiral-btn" onclick="showContent('school')">Cooperating School</button>
+        <button class="spiral-btn" onclick="showContent('readings')">Prof. Readings</button>
+        <button class="spiral-btn" onclick="showContent('journals')">Journals</button>
+        <button class="spiral-btn" onclick="showContent('observation')">Observation Tools</button>
+        <button class="spiral-btn" onclick="showContent('lessonplans')">Lesson Plans</button>
+        <button class="spiral-btn" onclick="showContent('demos')">Teaching Demos</button>
+        <button class="spiral-btn" onclick="showContent('dtr')">DTR's</button>
+        <button class="spiral-btn" onclick="showContent('rating')">Rating Sheets</button>
+        <button class="spiral-btn" onclick="showContent('philosophy')">Philosophy</button>
+        <button class="spiral-btn" onclick="showContent('docs')">Documentation</button>
+    </nav>
+
+    <div class="main-stage">
+        
+        <div class="header-title">MA'AM BEA'S PORTFOLIO</div>
+
+        <div class="display-container">
+            
+            <div id="landing-area" class="landing-view">
+                <div class="purple-banner">
+                    <div class="banner-text">
+                        <span class="text-yellow">LEARNING</span><br>
+                        <span class="text-green">THROUGH</span><br>
+                        <span class="text-green">LITTLE EYES</span>
+                    </div>
+                </div>
+                
+                <img src="AnaBea.png" alt="Ma'am Bea" class="profile-img">
+
+                <div class="social-footer">
+                    <i class="fab fa-instagram" title="Instagram"></i>
+                    <i class="fab fa-facebook" title="Facebook"></i>
+                    <i class="fas fa-envelope" title="Email"></i>
+                </div>
+            </div>
+
+            <div id="content-area" class="content-view">
+                
+                <button class="home-btn" onclick="closeContent()">
+                    <i class="fas fa-home"></i> Back to Home
+                </button>
+                
+                <div id="intro" class="section-text" style="display:none;">
+                    <h2>Introduction</h2>
+                    <div style="font-size: 1.1rem; line-height: 1.8; color: #444;">
+                        <p>Welcome to <strong>Learning Through Little Eyes</strong>, my e-portfolio for my ECE classroom internship.</p>
+                        <p>This journey taught me one important thing. In an early childhood classroom, the small moments are actually the big ones. A tiny hand reaching out, a quiet child finally joining the circle, a proud “Teacher, look!” after finishing a task. These are the real lessons that do not always fit neatly on a worksheet.</p>
+                        <p>As I observed, assisted, and slowly stepped into teaching, I learned to look at the day the way children do, with curiosity, big feelings, and a lot of wonder. Some days were full of giggles and glue. Other days needed extra patience, gentle reminders, and calm voices. Through it all, I grew, not just in skills like planning activities, managing routines, and supporting learners, but also in understanding what it means to teach with heart.</p>
+                        <p>Inside this portfolio, you will find my reflections, observations, and sample works that show my growth throughout the internship. This is my story of learning to teach by first learning to see through little eyes.</p>
+                    </div>
+                </div>
+
+                <div id="ack" class="section-text" style="display:none;">
+                    <h2>Acknowledgements</h2>
+                    <div style="font-size: 1.1rem; line-height: 1.8; color: #444;">
+                        <p>My sincere thanks to my resource teacher for the patience, feedback, and trust given to me during my internship. I also appreciate the school community for the warm welcome, and allowing me to learn through real experiences.</p>
+                        <p>To the learners, thank you for the smiles, lessons, and daily reminders that small moments matter.</p>
+                        <p>Lastly, thank you to my family, friends, and cooperating teacher for encouraging me throughout this journey.</p>
+                    </div>
+                </div>
+
+                <div id="cv" class="section-text" style="display:none;">
+                    <h2>Curriculum Vitae</h2>
+                    <div style="background-color: #fff; border: 1px solid #ddd; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <div style="text-align: center; border-bottom: 2px solid #8B5CF6; padding-bottom: 20px; margin-bottom: 20px;">
+                            <h1 style="margin: 0; color: #333; text-transform: uppercase;">Ana Bea F. Montenegro</h1>
+                            <p style="margin: 5px 0 0; color: #666; font-size: 1.2rem;">School Teacher</p>
+                            <div style="margin-top: 10px; font-size: 0.95rem; color: #555;">
+                                <span><i class="fas fa-phone"></i> 09279896997</span> &nbsp;|&nbsp; 
+                                <span><i class="fas fa-envelope"></i> anabeamontenegro@gmail.com</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #8B5CF6; border-left: 4px solid #FCD34D; padding-left: 10px; margin-bottom: 10px;">About Me</h3>
+                            <p style="color: #444; line-height: 1.6;">Aspiring Early Childhood Educator who enjoys working with young children and supporting their learning through play, routines, and gentle guidance. During my internship, I assisted in daily classroom activities, prepared learning materials, and observed how children grow in confidence, communication, and social skills. I value patience, kindness, and clear communication, and I aim to help create a safe, happy classroom where every child feels seen and encouraged to learn.</p>
+                        </div>
+
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #8B5CF6; border-left: 4px solid #FCD34D; padding-left: 10px; margin-bottom: 15px;">Education</h3>
+                            <div style="margin-bottom: 15px;">
+                                <h4 style="margin: 0; color: #333;">Post Baccalaureate Degree in Early Childhood Education</h4>
+                                <div style="display: flex; justify-content: space-between; color: #666; font-size: 0.95rem;">
+                                    <span>West Visayas State University</span><span>2023 - 2025</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; color: #333;">Bachelor of Elementary Education - General Education</h4>
+                                <div style="display: flex; justify-content: space-between; color: #666; font-size: 0.95rem;">
+                                    <span>West Visayas State University</span><span>2015 - 2019</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #8B5CF6; border-left: 4px solid #FCD34D; padding-left: 10px; margin-bottom: 15px;">Work Experience</h3>
+                            <div style="margin-bottom: 20px;">
+                                <h4 style="margin: 0; color: #333;">Assistant Manager</h4>
+                                <div style="display: flex; justify-content: space-between; color: #666; font-style: italic; font-size: 0.95rem; margin-bottom: 5px;">
+                                    <span>Grow Forward JP Inc.</span><span>Jan 2024 - Present</span>
+                                </div>
+                                <p style="margin: 0; color: #444; font-size: 0.95rem;">Supporting both Abacus and intercultural programs. Coordinates day to day operations, supports program planning and delivery, communicates with clients and partners, and helps ensure activities run smoothly and on schedule.</p>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <h4 style="margin: 0; color: #333;">Online English Teacher</h4>
+                                <div style="display: flex; justify-content: space-between; color: #666; font-style: italic; font-size: 0.95rem; margin-bottom: 5px;">
+                                    <span>Grow Forward JP Inc.</span><span>Jan 2021 - Dec 2023</span>
+                                </div>
+                                <p style="margin: 0; color: #444; font-size: 0.95rem;">Online English Teacher who progressed into a supervisory role. Handled online classes while also guiding the team by coordinating schedules, monitoring lesson quality, supporting teachers with coaching, and helping ensure smooth day to day service operations.</p>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; color: #333;">Assistant Teacher</h4>
+                                <div style="display: flex; justify-content: space-between; color: #666; font-style: italic; font-size: 0.95rem; margin-bottom: 5px;">
+                                    <span>Department of Labor and Employment</span><span>Sept 2020 - Dec 2020</span>
+                                </div>
+                                <p style="margin: 0; color: #444; font-size: 0.95rem;">Assistant Teacher under the DOLE program assigned to a public school during the pandemic. Assisted teachers in modular learning by organizing, distributing, and retrieving learning modules and supporting learners and parents with basic guidance.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 250px;">
+                                <h3 style="color: #8B5CF6; border-left: 4px solid #FCD34D; padding-left: 10px; margin-bottom: 10px;">Hobbies</h3>
+                                <ul style="list-style-type: square; color: #444; padding-left: 20px;">
+                                    <li>Singing</li><li>Dancing</li><li>Reading</li><li>Watching Movies</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 250px;">
+                                <h3 style="color: #8B5CF6; border-left: 4px solid #FCD34D; padding-left: 10px; margin-bottom: 10px;">References</h3>
+                                <div style="margin-bottom: 10px;">
+                                    <strong>Kiyota Watanabe</strong><br><span style="color: #666; font-size: 0.9rem;">Grow Forward JP Inc. | Manager</span><br><span style="font-size: 0.9rem;">0929 340 0939 | admin@grow-fwd.com</span>
+                                </div>
+                                <div>
+                                    <strong>Shyra Mogato</strong><br><span style="color: #666; font-size: 0.9rem;">Grow Forward JP Inc. | Supervisor</span><br><span style="font-size: 0.9rem;">0917 960 6211 | shyra.gfw2019@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="school" class="section-text" style="display:none;">
+                    <h2>Description of Cooperating School</h2>
+                    <div style="font-size: 1.1rem; line-height: 1.8; color: #444;">
+                        <p>My internship site was <strong>Bahay Bulilit</strong>, a city government day care center in Jaro managed under DSWD and supported by the McDonald’s Foundation program.</p> 
+                        <p>The center provides a safe and child friendly learning space for young learners, with a fully air conditioned classroom that helps keep children comfortable throughout the day. It also has a small kitchen area used for simple meal preparation and classroom needs, and a little front yard where the children can play and release energy after class.</p>
+                    </div>
+                </div>
+
+                <div id="readings" class="section-text" style="display:none;">
+                    <h2>Recent Issues and Trends in ECE Professional Readings</h2>
+
+                    <div class="content-card">
+                        <h3 style="color: #8B5CF6; margin-top: 0;">Professional Reading 1</h3>
+                        <h4 style="margin: 10px 0 5px; color: #333;">Title: Behind the Slow Start: An Assessment of Early Childhood Care and Development in the Philippines</h4>
+                        <p style="font-style: italic; color: #666; margin-bottom: 15px;">Source: Philippine Institute for Development Studies (PIDS, 2024)</p>
+
+                        <div style="margin-bottom: 15px;">
+                            <strong style="color: #005f73;">Summary:</strong>
+                            <p style="margin-top: 5px; line-height: 1.6; color: #444;">This study evaluates the state of early childhood education (ECE) in the Philippines, emphasizing disparities in access and quality across regions. It identifies issues such as the shortage of child development centers, insufficiently trained teachers, and uneven participation among 3- to 4-year-olds. The report highlights that while policies like the ECCD Act aim to ensure accessibility, implementation remains inconsistent due to funding gaps and limited local government capacity. PIDS recommends stronger national coordination, continuous teacher training, and targeted investments to achieve universal access to quality ECE.</p>
+                        </div>
+
+                        <div>
+                            <strong style="color: #005f73;">Reflection:</strong>
+                            <p style="margin-top: 5px; line-height: 1.6; color: #444;">This reading shows that even with solid policies, early childhood education in the Philippines still faces implementation challenges. As a future educator or program developer, I realized that improving early education isn’t just about curriculum, it also requires systemic support, funding, and community engagement. The study inspired me to think about how educators can advocate for resources and collaborate with local governments to ensure every child receives equal opportunities to learn during their formative years.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3 style="color: #8B5CF6; margin-top: 0;">Professional Reading 2</h3>
+                        <h4 style="margin: 10px 0 5px; color: #333;">Title: Investing in the Early Years to Boost Human Capital in the Philippines</h4>
+                        <p style="font-style: italic; color: #666; margin-bottom: 15px;">Source: World Bank (June 2024)</p>
+
+                        <div style="margin-bottom: 15px;">
+                            <strong style="color: #005f73;">Summary:</strong>
+                            <p style="margin-top: 5px; line-height: 1.6; color: #444;">The World Bank report stresses that investments in the early years—especially in health, nutrition, and education—are vital for long-term national development. It emphasizes that early childhood programs build the foundation for cognitive, emotional, and social skills necessary for lifelong learning. The report calls for more inter-agency coordination and budget prioritization to ensure that children under five receive comprehensive early care and learning support. It also links early childhood outcomes to future productivity and economic growth.</p>
+                        </div>
+
+                        <div>
+                            <strong style="color: #005f73;">Reflection:</strong>
+                            <p style="margin-top: 5px; line-height: 1.6; color: #444;">This reading helped me understand how early childhood education is not just a school concern but a national priority. It broadened my view that developing young learners strengthens the country’s human capital and competitiveness. As an educator, this pushes me to promote holistic child development—balancing academic, emotional, and health aspects. It also motivates me to support policies that treat ECE as a long-term investment, not merely a social service.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="journals" class="section-text" style="display:none;">
+                    <h2>Daily Journals</h2>
+                    <div style="margin-bottom: 40px; border-bottom: 1px dashed #ccc; padding-bottom: 30px;">
+                        <h3 style="color: #8B5CF6; margin-bottom: 15px;">Journal Entry 1: First Day at the Center</h3>
+                        <div style="font-size: 1.05rem; line-height: 1.8; color: #444;">
+                            <p>Today was my first day at Bahay Bulilit, and I felt a mix of excitement and nervousness. As soon as I arrived, I noticed how welcoming everyone was. The teachers and staff greeted me warmly, and even the parents were friendly and approachable. Some parents introduced themselves and asked about my role, which made me feel included right away. I also met the PTA President, and it reminded me how important parent involvement is in a daycare setting.</p>
+                            <p>A usual day in the center follows simple routines that help children feel safe and organized. The day started with greetings and settling in, then short learning activities through songs, stories, and guided tasks. There was also snack time where children practiced good habits like handwashing, sharing, and cleaning up. Throughout the day, I observed how the teacher used gentle reminders and clear instructions to guide the children.</p>
+                            <p>Overall, my first day was simple but meaningful. It showed me that daycare is not only about lessons, but also about building routines, confidence, and a caring classroom community.</p>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 40px; border-bottom: 1px dashed #ccc; padding-bottom: 30px;">
+                        <h3 style="color: #8B5CF6; margin-bottom: 15px;">Journal Entry 2: Family Day at La Paz Plaza</h3>
+                        <div style="font-size: 1.05rem; line-height: 1.8; color: #444;">
+                            <p>Today we had our Family Day at La Paz Plaza, where Bahay Bulilit joined other daycare centers from different districts in the city. It felt exciting to see so many learners, teachers, and parents gathered in one place. Each district had a chance to showcase the children’s talents, and it was heartwarming to watch them perform with confidence while the adults cheered them on. You could really feel the support and pride from the families.</p>
+                            <p>There were also different games prepared, and the children were clearly enjoying the activities. Even in a busy and open environment, the teachers and parents worked together to guide the learners and keep them safe. I noticed how events like this help children practice social skills, teamwork, and courage, especially when they are surrounded by a bigger crowd than usual.</p>
+                            <p>The plaza was an open space, so it was quite hot, but the fun energy made it easier to enjoy the day. One of the best parts was the free lunch prepared by the parents. The food was delicious, and it showed the effort and cooperation of the families to make the event successful. Overall, Family Day was a meaningful experience because it strengthened the connection between home and school, and it reminded me that learning also happens through community activities, not only inside the classroom.</p>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 40px; border-bottom: 1px dashed #ccc; padding-bottom: 30px;">
+                        <h3 style="color: #8B5CF6; margin-bottom: 15px;">Journal Entry 3: Children’s Month Celebration and McDonald’s Free Lunch</h3>
+                        <div style="font-size: 1.05rem; line-height: 1.8; color: #444;">
+                            <p>Today, our center received free lunch from McDonald’s as part of the celebration of Children’s Month. It was a special day for the learners because they were excited to receive a Happy Meal, and it also reminded me why Bahay Bulilit is connected to the McDonald’s Foundation program. The children kept asking questions and looking forward to the lunch, and you could really feel their excitement.</p>
+                            <p>However, there were some issues with communication and coordination. The arrangement was not planned smoothly, so the learners ended up waiting for a long time. I noticed that waiting can be challenging in a daycare setting because children have short attention spans and easily become restless. The teachers did their best to keep them calm through reminders, simple activities, and patience while we waited for the lunch to arrive.</p>
+                            <p>In the end, the long wait was worth it for the children. When the food finally arrived, they were so happy, and the mood of the day instantly became brighter. Everyone enjoyed the free lunch, and it felt like a simple but meaningful celebration for the kids. This experience also taught me that events can be successful when teamwork and clear communication are strong, but even when small problems happen, what matters most is keeping the learners safe, settled, and happy.</p>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="color: #8B5CF6; margin-bottom: 15px;">Journal Entry 4: My Last Demo on Water Transportation</h3>
+                        <div style="font-size: 1.05rem; line-height: 1.8; color: #444;">
+                            <p>Today was my last demo teaching at the center, and I felt a mix of excitement and nervousness. My lesson was about water transportation, and I prepared the materials and activities carefully because I wanted it to be meaningful and enjoyable for the learners. Before starting, I reminded myself to stay calm, speak clearly, and focus on guiding the children step by step.</p>
+                            <p>Even though I have been staying in the center for quite some time, I noticed something that made me smile. Some learners still called me “tita” instead of “ma’am.” At first, I wondered why, but I realized it is because they are very used to the presence of my resource teacher and they naturally connect “ma’am” with her. Instead of feeling discouraged, I took it as a sign that the children feel comfortable with me. In a daycare setting, being called “tita” can also mean that the learners see you as someone safe and familiar.</p>
+                            <p>During the demo, the children were attentive and actively participated. They were curious about boats and other kinds of water transportation, and they enjoyed answering questions and sharing what they know. The activity went smoothly, and I felt proud that I was able to manage the flow of the lesson while keeping the learners engaged. The best part was hearing the learners react with excitement, especially when one of them said the word “amazing.” It made me feel happy because it showed that they truly enjoyed the lesson and were interested in what we were learning.</p>
+                            <p>At the end of the day, I felt grateful and fulfilled. This last demo reminded me how much I have grown during my internship, not only in teaching skills, but also in confidence and connection with the learners. It was a simple lesson, but it became a meaningful moment for me because I knew I was able to pull through and leave the children with a positive learning experience.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="observation" class="section-text" style="display:none;">
+                    <h2>Classroom Observational Tools</h2>
+                    <div class="content-card">
+                        <h3 style="color: #8B5CF6; margin-top: 0; margin-bottom: 20px;">Observation Reports</h3>
+                        <p style="margin-bottom: 30px; color: #555;">Below are the copies of the observation tools completed during my internship sessions.</p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 30px; align-items: center;">
+                            <img src="one.png" alt="Observation Tool 1" class="obs-img">
+                            <img src="two.png" alt="Observation Tool 2" class="obs-img">
+                            <img src="three.png" alt="Observation Tool 3" class="obs-img">
+                            <img src="four.png" alt="Observation Tool 4" class="obs-img">
+                            <img src="five.png" alt="Observation Tool 5" class="obs-img">
+                            <img src="six.png" alt="Observation Tool 6" class="obs-img">
+                            <img src="seven.png" alt="Observation Tool 7" class="obs-img">
+                            <img src="eight.png" alt="Observation Tool 8" class="obs-img">
+                            <img src="nine.png" alt="Observation Tool 9" class="obs-img">
+                            <img src="ten.png" alt="Observation Tool 10" class="obs-img">
+                            <img src="eleven.png" alt="Observation Tool 11" class="obs-img">
+                            <img src="twelve.png" alt="Observation Tool 12" class="obs-img">
+                            <img src="thirteen.png" alt="Observation Tool 13" class="obs-img">
+                            <img src="fourteen.png" alt="Observation Tool 14" class="obs-img">
+                            <img src="fifteen.png" alt="Observation Tool 15" class="obs-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="lessonplans" class="section-text" style="display:none;">
+                    <h2>2 Best Lesson Plans/Scripts</h2>
+                    
+                    <div class="content-card">
+                        <div class="lesson-header-block">
+                            <h3 class="lesson-topic">Topic: Water Transportation</h3>
+                        </div>
+                        
+                        <div class="lesson-objectives">
+                            <strong>Learning Objectives:</strong>
+                            <ul style="margin-top: 5px; margin-bottom: 0;">
+                                <li>Children will be able to recognize different types of water transportation.</li>
+                                <li>Children will understand that water vehicles move on water, not on land.</li>
+                                <li>Children will develop motor, language, and social skills through play and group activities.</li>
+                            </ul>
+                        </div>
+
+                        <table class="lesson-table">
+                            <thead>
+                                <tr>
+                                    <th>Routine Activity</th>
+                                    <th>Procedure / Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Arrival / Free Play</td>
+                                    <td>Greet children warmly.</td>
+                                </tr>
+                                <tr>
+                                    <td>Meeting Time</td>
+                                    <td>
+                                        <ul>
+                                            <li>Introduce the day’s topic using flashcards or pictures of land, air, and water transportation.</li>
+                                            <li>Show pictures and ask children to identify which move on land, air, or water.</li>
+                                            <li>Sing the traditional song with the children and encourage them to act out the rowing motion. (Song: “Row, Row, Row Your Boat”)</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Activity Time</td>
+                                    <td>
+                                        <strong>Hands-on experience about floating objects.</strong><br>
+                                        <em>Activity: Boat Float Experiment / Craft</em><br><br>
+                                        <strong>Materials:</strong>
+                                        <ul>
+                                            <li>Basin with water</li>
+                                            <li>Paper boats</li>
+                                        </ul>
+                                        <br>
+                                        <strong>Steps:</strong>
+                                        <ul>
+                                            <li>Make paper boats together</li>
+                                            <li>Let each child place a boat in the basin.</li>
+                                            <li>Observe how it floats.</li>
+                                            <li>Say: “Boats float on water, not on land!”</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Outdoor Playtime</td>
+                                    <td>Free time for outdoor play.</td>
+                                </tr>
+                                <tr>
+                                    <td>Snack Time & Break</td>
+                                    <td>Teach the learners to wash their hands, toothbrushing, changing clothes and cleaning their table.</td>
+                                </tr>
+                                <tr>
+                                    <td>Rest / Nap Time</td>
+                                    <td>Let the learners rest.</td>
+                                </tr>
+                                <tr>
+                                    <td>Circle Time</td>
+                                    <td>
+                                        <ul>
+                                            <li>Reinforce learning through songs and movement.</li>
+                                            <li>Sing boat action song.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Story Time</td>
+                                    <td>Make-up story: “The Little Boat That Could”</td>
+                                </tr>
+                                <tr>
+                                    <td>Goodbye Time</td>
+                                    <td>Wrap up and say farewell.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="lesson-header-block">
+                            <h3 class="lesson-topic">Topic: Community Helpers</h3>
+                        </div>
+                        
+                        <div class="lesson-objectives">
+                            <strong>Learning Objectives:</strong>
+                            <ul style="margin-top: 5px; margin-bottom: 0;">
+                                <li>Children will be able to name at least 3 community helpers.</li>
+                                <li>Children will be able to match a helper to their tool or workplace.</li>
+                                <li>Children will be able to practice classroom social skills during activities.</li>
+                            </ul>
+                        </div>
+
+                        <table class="lesson-table">
+                            <thead>
+                                <tr>
+                                    <th>Routine Activity</th>
+                                    <th>Procedure / Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Arrival / Free Play</td>
+                                    <td>Greet children warmly.</td>
+                                </tr>
+                                <tr>
+                                    <td>Meeting Time</td>
+                                    <td>
+                                        <ul>
+                                            <li>Greeting, attendance, classroom reminders.</li>
+                                            <li>Show 2 to 3 helper pictures and ask: “Who is this? How do they help us?”</li>
+                                            <li>Sing the helpers in our town (to the tune of The Wheels on the Bus).</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Activity Time</td>
+                                    <td>
+                                        <strong>Activity 1: Match the Helper</strong>
+                                        <ul>
+                                            <li>Helpers: doctor, firefighter, police officer, teacher, baker</li>
+                                            <li>Match with tools/workplaces: stethoscope, hose, badge, books, oven</li>
+                                        </ul>
+                                        <br>
+                                        <strong>Activity 2: My Favorite Helper</strong>
+                                        <ul>
+                                            <li>Children choose 1 helper picture, then add colors to it.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Outdoor Playtime</td>
+                                    <td>Free time for outdoor play.</td>
+                                </tr>
+                                <tr>
+                                    <td>Snack Time & Break</td>
+                                    <td>Teach the learners to wash their hands, toothbrushing, changing clothes and cleaning their table.</td>
+                                </tr>
+                                <tr>
+                                    <td>Rest / Nap Time</td>
+                                    <td>Let the learners rest.</td>
+                                </tr>
+                                <tr>
+                                    <td>Circle Time</td>
+                                    <td>
+                                        Show picture cards again.
+                                        <br><br>
+                                        <strong>Question Prompts:</strong>
+                                        <ul>
+                                            <li>Which helper helps when there is a fire?</li>
+                                            <li>Which helper helps when we feel sick?</li>
+                                            <li>How can we help at school?</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Story Time</td>
+                                    <td>A book about helpers in the community story.</td>
+                                </tr>
+                                <tr>
+                                    <td>Goodbye Time</td>
+                                    <td>Pack up and say goodbye.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="demos" class="section-text" style="display:none;">
+                    <h2>Teaching Demonstrations</h2>
+                    <div class="placeholder-box">[Insert Videos/Links]</div>
+                </div>
+
+                <div id="dtr" class="section-text" style="display:none;">
+                    <h2>Daily Time Records</h2>
+                    <div class="content-card"> 
+                        <h3 style="color: #8B5CF6; margin-top: 0; margin-bottom: 20px;">Attendance Records</h3>
+                        <p style="margin-bottom: 30px; color: #555;">Here are the copies of my Daily Time Records (DTR) documenting my internship hours.</p>
+
+                        <div style="text-align: center; display: flex; flex-direction: column; gap: 30px; align-items: center;">
+                            <img src="DTR1.png" alt="Daily Time Record 1" class="dtr-img">
+                            <img src="DTR2.png" alt="Daily Time Record 2" class="dtr-img">
+                            <img src="DTR3.png" alt="Daily Time Record 3" class="dtr-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="rating" class="section-text" style="display:none;">
+                    <h2>Rating Sheets</h2>
+                    <div class="content-card">
+                        <h3 style="color: #8B5CF6; margin-top: 0; margin-bottom: 20px;">Performance Rating</h3>
+                        <p style="margin-bottom: 30px; color: #555;">Below is the copy of my rating sheet from my cooperating teacher.</p>
+
+                        <div style="text-align: center;">
+                            <h4 style="margin-bottom: 10px; color: #333;">Rating Sheet</h4>
+                            <img src="rating2.png" alt="Rating Sheet" class="rating-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="philosophy" class="section-text" style="display:none;">
+                    <h2>Teaching Philosophy</h2>
+                    <div style="font-size: 1.1rem; line-height: 1.8; color: #444;">
+                        <p>I believe young children learn best in a calm, safe, and consistent environment where they feel seen and trusted. As a beginning teacher, my priority is to build strong relationships and create daily routines that help learners feel secure. When children feel safe, they become more confident to explore, communicate, and try new things.</p>
+                        <p>I also believe in “watching over” children with patience and trust. Instead of stepping in too quickly, I will observe carefully, give them time to attempt tasks on their own, and guide only when needed. This helps children build independence, problem solving skills, and pride in their own effort.</p>
+                        <p>Learning should be active and meaningful, especially through play and real life experiences. I will provide hands on activities, stories, songs, and simple conversations that match the child’s development. I value the small daily moments like cleaning up together, taking turns, and helping a classmate because these teach responsibility, cooperation, and respect in a natural way.</p>
+                        <p>I believe discipline should be gentle and consistent. My goal is not to control behavior through fear, but to teach children how to manage feelings, follow routines, and care about others. I will model empathy and encourage children to notice how their actions affect the people around them.</p>
+                        <p>Finally, I believe teaching is a continuous practice of reflection and improvement. I will look back on each day, learn from feedback, and keep improving little by little. My goal is to be a teacher who leads with patience, supports children’s independence, and helps them grow into kind, capable, and confident learners.</p>
+                    </div>
+                </div>
+
+                <div id="docs" class="section-text" style="display:none;">
+                    <h2>Documentation & Pictures</h2>
+                    <p style="margin-bottom: 20px; color: #555;">Here are some captured moments from my internship journey at Bahay Bulilit.</p>
+                    <div class="gallery-grid">
+                        <img src="kid1.jpg" alt="Documentation Photo 1">
+                        <img src="kid2.jpg" alt="Documentation Photo 2">
+                        <img src="kid3.jpg" alt="Documentation Photo 3">
+                        <img src="kid4.jpg" alt="Documentation Photo 4">
+                        <img src="kid5.jpg" alt="Documentation Photo 5">
+                        <img src="kid6.jpg" alt="Documentation Photo 6">
+                        <img src="kid7.jpg" alt="Documentation Photo 7">
+                        <img src="kid8.jpg" alt="Documentation Photo 8">
+                        <img src="kid9.jpg" alt="Documentation Photo 9">
+                        <img src="kid10.jpg" alt="Documentation Photo 10">
+                        <img src="kid11.jpg" alt="Documentation Photo 11">
+                        <img src="kid12.jpg" alt="Documentation Photo 12">
+                        <img src="kid13.jpg" alt="Documentation Photo 13">
+                        <img src="kid14.jpg" alt="Documentation Photo 14">
+                        <img src="kid15.jpg" alt="Documentation Photo 15">
+                        <img src="kid16.jpg" alt="Documentation Photo 16">
+                        <img src="kid17.jpg" alt="Documentation Photo 17">
+                        <img src="kid18.jpg" alt="Documentation Photo 18">
+                        <img src="kid19.jpg" alt="Documentation Photo 19">
+                        <img src="kid20.jpg" alt="Documentation Photo 20">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="fullImage">
+    </div>
+
+    <script>
+        function showContent(sectionId) {
+            document.getElementById('landing-area').style.display = 'none';
+            document.getElementById('content-area').style.display = 'block';
+            const allSections = document.querySelectorAll('.section-text');
+            allSections.forEach(div => div.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+            const allBtns = document.querySelectorAll('.spiral-btn');
+            allBtns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function closeContent() {
+            document.getElementById('content-area').style.display = 'none';
+            document.getElementById('landing-area').style.display = 'flex';
+            const allBtns = document.querySelectorAll('.spiral-btn');
+            allBtns.forEach(btn => btn.classList.remove('active'));
+        }
+
+        /* --- LIGHTBOX LOGIC --- */
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("fullImage");
+        // Select all images in the gallery
+        var galleryImages = document.querySelectorAll('.gallery-grid img');
+
+        galleryImages.forEach(img => {
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        // Close logic
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() { 
+            modal.style.display = "none"; 
+        }
+        
+        // Click outside closes modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

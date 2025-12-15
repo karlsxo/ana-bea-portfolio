@@ -1,0 +1,479 @@
+/* --- CSS STYLES --- */
+:root {
+    --bg-cream: #ece7d9; 
+    --spiral-yellow: #FCD34D; 
+    --banner-purple: #8B5CF6; 
+    --text-yellow: #FDE047; 
+    --text-green: #4ADE80; 
+    --text-dark: #333;
+    --table-border: #ddd;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    /* Allow body to grow and scroll naturally */
+    min-height: 100vh; 
+    display: flex;
+    overflow-x: hidden; /* Prevent horizontal scroll only */
+    overflow-y: auto;   /* Allow main browser scrollbar */
+}
+
+/* --- LEFT SIDEBAR (Yellow Buttons) --- */
+.sidebar {
+    width: 280px; 
+    /* Sticky positioning so it stays visible while you scroll the page */
+    position: sticky; 
+    top: 0;
+    height: 100vh; /* Fill the screen height */
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px; 
+    background-color: transparent; 
+    overflow-y: auto; /* Allow sidebar to scroll internally if screen is very short */
+    z-index: 100;
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+}
+
+.sidebar::-webkit-scrollbar { display: none; }
+.sidebar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.spiral-btn {
+    background-color: var(--spiral-yellow);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 15px;
+    font-weight: 900; 
+    font-size: 0.95rem; 
+    letter-spacing: 0.5px;
+    color: #4a3b32; 
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    cursor: pointer;
+    text-align: left;
+    transition: transform 0.2s, width 0.2s, background-color 0.2s;
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+    width: 92%; 
+    white-space: nowrap;
+}
+
+.spiral-btn:hover {
+    width: 100%; 
+    background-color: #fbbf24;
+    transform: translateX(5px);
+}
+
+.spiral-btn.active {
+    width: 100%;
+    background-color: var(--banner-purple);
+    color: white;
+    box-shadow: none;
+}
+
+/* --- RIGHT MAIN AREA --- */
+.main-stage {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-height: 100vh; /* Ensure it takes at least full screen */
+}
+
+/* --- HEADER (Ma'am Bea Text) --- */
+.header-title {
+    margin-left: 100px;
+    margin-top: 20px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #333;
+    padding-top: 15px;
+    margin-bottom: 30px; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 50;
+    text-shadow: 2px 2px 0px rgba(255,255,255,0.5); 
+}
+
+/* --- FOOTER (Social Icons) --- */
+.social-footer {
+    display: flex;
+    justify-content: flex-start; 
+    padding-left: 100px; 
+    gap: 100px; 
+    z-index: 60; 
+    margin-top: auto; /* Push to bottom of container if space permits */
+    padding-bottom: 3px;
+}
+
+/* Specific styling for when inside the landing view */
+.landing-view .social-footer {
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 100%;
+}
+
+.social-footer i {
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+    background: rgba(255,255,255,0.5); 
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.social-footer i:hover { transform: scale(1.2); background: white; }
+
+.fa-instagram { color: #E1306C; }
+.fa-facebook { color: #1877F2; }
+.fa-envelope { color: #EA4335; }
+
+
+.display-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* --- VIEW 1: THE LANDING BANNER --- */
+.landing-view {
+    position: relative;
+    width: 100%;
+    height: 80vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.purple-banner {
+    background-color: var(--banner-purple);
+    width: 96%; 
+    height: 75%;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 60px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 1; 
+}
+
+.banner-text {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    font-size: 5.5rem;
+    line-height: 1.3;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2; 
+    margin-left: 90px;
+}
+
+.text-yellow { color: var(--text-yellow); text-shadow: 4px 4px 0 rgba(0,0,0,0.2); }
+.text-green { color: var(--text-green); text-shadow: 4px 4px 0 rgba(0,0,0,0.2); }
+
+
+/* The Profile Image */
+.profile-img {
+    position: absolute;
+    bottom: 0;
+    right: 2%;
+    height: 90vh; 
+    width: auto;
+    z-index: 10; 
+    pointer-events: none; 
+    filter: drop-shadow(10px 0 15px rgba(0,0,0,0.3));
+}
+
+/* --- VIEW 2: THE CONTENT PAGE --- */
+.content-view {
+    display: none; 
+    background-color: white;
+    width: 95%;
+    height: auto; 
+    min-height: 80vh; 
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    padding: 40px;
+    position: relative;
+    animation: slideUp 0.4s ease-out;
+    z-index: 100; 
+    border: 5px solid var(--banner-purple);
+    margin-bottom: 50px; 
+}
+
+.home-btn {
+    background-color: var(--banner-purple);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s;
+}
+
+.home-btn:hover {
+    background-color: #7c3aed;
+    transform: scale(1.05);
+}
+
+.content-view h2 {
+    color: var(--banner-purple);
+    border-bottom: 3px solid var(--spiral-yellow);
+    padding-bottom: 10px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 2rem;
+}
+
+.placeholder-box {
+    background: #fdfdfd;
+    border: 3px dashed #ddd;
+    padding: 40px;
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+}
+
+/* --- CONTENT CARD STYLES --- */
+.content-card {
+    background: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.lesson-header-block {
+    margin-bottom: 20px;
+    border-left: 5px solid var(--banner-purple);
+    padding-left: 15px;
+}
+
+.lesson-topic {
+    font-size: 1.5rem;
+    color: var(--banner-purple);
+    margin: 0;
+    font-weight: 800;
+}
+
+.lesson-objectives {
+    margin-top: 10px;
+    color: #555;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.lesson-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.lesson-table th, .lesson-table td {
+    border: 1px solid var(--table-border);
+    padding: 12px 15px;
+    vertical-align: top;
+    color: #444;
+}
+
+.lesson-table th {
+    background-color: var(--spiral-yellow);
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+    width: 30%; /* Width of the "Routine" column */
+}
+
+.lesson-table td ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.lesson-table td li {
+    margin-bottom: 5px;
+}
+
+/* --- IMAGES (Rating, DTR, Obs) --- */
+.rating-img, .dtr-img {
+    width: 100%;
+    max-width: 800px; 
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: inline-block;
+}
+
+.obs-img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+/* --- DOCUMENTATION GALLERY --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Makes it look clickable */
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 1100px) {
+    .banner-text { font-size: 3.5rem; }
+    .profile-img { height: 65vh; right: -20px; }
+    .header-title { font-size: 2rem; }
+}
+
+@media (max-width: 768px) {
+    body { flex-direction: column; overflow: auto; }
+    .sidebar { 
+        width: 100%; 
+        height: auto; 
+        position: relative; /* Not sticky on mobile */
+        flex-direction: row; 
+        overflow-x: auto; 
+        padding: 15px; 
+        gap: 10px; 
+    }
+    .spiral-btn { width: auto; font-size: 0.9rem; padding: 10px 15px; }
+    .profile-img { display: none; }
+    .purple-banner { width: 100%; height: 300px; padding-left: 0; text-align: center; align-items: center; }
+    .banner-text { font-size: 2.8rem; margin-left: 0; }
+    
+    .header-title { margin-top: 10px; font-size: 1.8rem; margin-left: 0; text-align: center; }
+    
+    .social-footer { 
+        position: relative; 
+        bottom: auto; 
+        margin-top: 20px; 
+        padding-bottom: 20px;
+        justify-content: center; 
+        padding-left: 0; 
+    }
+    .social-footer i { font-size: 2.5rem; }
+    
+    .lesson-table th, .lesson-table td {
+        display: block;
+        width: 100%;
+    }
+    .lesson-table th {
+        background-color: #f0f0f0;
+        color: var(--banner-purple);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- LIGHTBOX MODAL STYLES --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2000; /* Sit on top of everything */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+    max-height: 85vh;
+    object-fit: contain;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+/* Add Animation */
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 2001;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive modal for smaller screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 95%;
+    }
+}

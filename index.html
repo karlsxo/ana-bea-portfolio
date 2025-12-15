@@ -9,7 +9,13 @@
 </head>
 <body>
 
-    <nav class="sidebar">
+    <button class="hamburger-btn" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="sidebar-overlay" onclick="closeSidebar()"></div>
+
+    <nav class="sidebar" id="mySidebar">
         <button class="spiral-btn" onclick="showContent('intro')">Introduction</button>
         <button class="spiral-btn" onclick="showContent('ack')">Acknowledgements</button>
         <button class="spiral-btn" onclick="showContent('cv')">Curriculum Vitae</button>
@@ -132,7 +138,7 @@
                             </div>
                         </div>
 
-                        <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                        <div class="cv-columns" style="display: flex; gap: 30px; flex-wrap: wrap;">
                             <div style="flex: 1; min-width: 250px;">
                                 <h3 style="color: #8B5CF6; border-left: 4px solid #FCD34D; padding-left: 10px; margin-bottom: 10px;">Hobbies</h3>
                                 <ul style="list-style-type: square; color: #444; padding-left: 20px;">
@@ -167,12 +173,10 @@
                         <h3 style="color: #8B5CF6; margin-top: 0;">Professional Reading 1</h3>
                         <h4 style="margin: 10px 0 5px; color: #333;">Title: Behind the Slow Start: An Assessment of Early Childhood Care and Development in the Philippines</h4>
                         <p style="font-style: italic; color: #666; margin-bottom: 15px;">Source: Philippine Institute for Development Studies (PIDS, 2024)</p>
-
                         <div style="margin-bottom: 15px;">
                             <strong style="color: #005f73;">Summary:</strong>
                             <p style="margin-top: 5px; line-height: 1.6; color: #444;">This study evaluates the state of early childhood education (ECE) in the Philippines, emphasizing disparities in access and quality across regions. It identifies issues such as the shortage of child development centers, insufficiently trained teachers, and uneven participation among 3- to 4-year-olds. The report highlights that while policies like the ECCD Act aim to ensure accessibility, implementation remains inconsistent due to funding gaps and limited local government capacity. PIDS recommends stronger national coordination, continuous teacher training, and targeted investments to achieve universal access to quality ECE.</p>
                         </div>
-
                         <div>
                             <strong style="color: #005f73;">Reflection:</strong>
                             <p style="margin-top: 5px; line-height: 1.6; color: #444;">This reading shows that even with solid policies, early childhood education in the Philippines still faces implementation challenges. As a future educator or program developer, I realized that improving early education isn’t just about curriculum, it also requires systemic support, funding, and community engagement. The study inspired me to think about how educators can advocate for resources and collaborate with local governments to ensure every child receives equal opportunities to learn during their formative years.</p>
@@ -183,12 +187,10 @@
                         <h3 style="color: #8B5CF6; margin-top: 0;">Professional Reading 2</h3>
                         <h4 style="margin: 10px 0 5px; color: #333;">Title: Investing in the Early Years to Boost Human Capital in the Philippines</h4>
                         <p style="font-style: italic; color: #666; margin-bottom: 15px;">Source: World Bank (June 2024)</p>
-
                         <div style="margin-bottom: 15px;">
                             <strong style="color: #005f73;">Summary:</strong>
                             <p style="margin-top: 5px; line-height: 1.6; color: #444;">The World Bank report stresses that investments in the early years—especially in health, nutrition, and education—are vital for long-term national development. It emphasizes that early childhood programs build the foundation for cognitive, emotional, and social skills necessary for lifelong learning. The report calls for more inter-agency coordination and budget prioritization to ensure that children under five receive comprehensive early care and learning support. It also links early childhood outcomes to future productivity and economic growth.</p>
                         </div>
-
                         <div>
                             <strong style="color: #005f73;">Reflection:</strong>
                             <p style="margin-top: 5px; line-height: 1.6; color: #444;">This reading helped me understand how early childhood education is not just a school concern but a national priority. It broadened my view that developing young learners strengthens the country’s human capital and competitiveness. As an educator, this pushes me to promote holistic child development—balancing academic, emotional, and health aspects. It also motivates me to support policies that treat ECE as a long-term investment, not merely a social service.</p>
@@ -276,79 +278,81 @@
                             </ul>
                         </div>
 
-                        <table class="lesson-table">
-                            <thead>
-                                <tr>
-                                    <th>Routine Activity</th>
-                                    <th>Procedure / Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Arrival / Free Play</td>
-                                    <td>Greet children warmly.</td>
-                                </tr>
-                                <tr>
-                                    <td>Meeting Time</td>
-                                    <td>
-                                        <ul>
-                                            <li>Introduce the day’s topic using flashcards or pictures of land, air, and water transportation.</li>
-                                            <li>Show pictures and ask children to identify which move on land, air, or water.</li>
-                                            <li>Sing the traditional song with the children and encourage them to act out the rowing motion. (Song: “Row, Row, Row Your Boat”)</li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Activity Time</td>
-                                    <td>
-                                        <strong>Hands-on experience about floating objects.</strong><br>
-                                        <em>Activity: Boat Float Experiment / Craft</em><br><br>
-                                        <strong>Materials:</strong>
-                                        <ul>
-                                            <li>Basin with water</li>
-                                            <li>Paper boats</li>
-                                        </ul>
-                                        <br>
-                                        <strong>Steps:</strong>
-                                        <ul>
-                                            <li>Make paper boats together</li>
-                                            <li>Let each child place a boat in the basin.</li>
-                                            <li>Observe how it floats.</li>
-                                            <li>Say: “Boats float on water, not on land!”</li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Outdoor Playtime</td>
-                                    <td>Free time for outdoor play.</td>
-                                </tr>
-                                <tr>
-                                    <td>Snack Time & Break</td>
-                                    <td>Teach the learners to wash their hands, toothbrushing, changing clothes and cleaning their table.</td>
-                                </tr>
-                                <tr>
-                                    <td>Rest / Nap Time</td>
-                                    <td>Let the learners rest.</td>
-                                </tr>
-                                <tr>
-                                    <td>Circle Time</td>
-                                    <td>
-                                        <ul>
-                                            <li>Reinforce learning through songs and movement.</li>
-                                            <li>Sing boat action song.</li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Story Time</td>
-                                    <td>Make-up story: “The Little Boat That Could”</td>
-                                </tr>
-                                <tr>
-                                    <td>Goodbye Time</td>
-                                    <td>Wrap up and say farewell.</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="lesson-table">
+                                <thead>
+                                    <tr>
+                                        <th>Routine Activity</th>
+                                        <th>Procedure / Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Arrival / Free Play</td>
+                                        <td>Greet children warmly.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Meeting Time</td>
+                                        <td>
+                                            <ul>
+                                                <li>Introduce the day’s topic using flashcards or pictures of land, air, and water transportation.</li>
+                                                <li>Show pictures and ask children to identify which move on land, air, or water.</li>
+                                                <li>Sing the traditional song with the children and encourage them to act out the rowing motion. (Song: “Row, Row, Row Your Boat”)</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Activity Time</td>
+                                        <td>
+                                            <strong>Hands-on experience about floating objects.</strong><br>
+                                            <em>Activity: Boat Float Experiment / Craft</em><br><br>
+                                            <strong>Materials:</strong>
+                                            <ul>
+                                                <li>Basin with water</li>
+                                                <li>Paper boats</li>
+                                            </ul>
+                                            <br>
+                                            <strong>Steps:</strong>
+                                            <ul>
+                                                <li>Make paper boats together</li>
+                                                <li>Let each child place a boat in the basin.</li>
+                                                <li>Observe how it floats.</li>
+                                                <li>Say: “Boats float on water, not on land!”</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Outdoor Playtime</td>
+                                        <td>Free time for outdoor play.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Snack Time & Break</td>
+                                        <td>Teach the learners to wash their hands, toothbrushing, changing clothes and cleaning their table.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rest / Nap Time</td>
+                                        <td>Let the learners rest.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Circle Time</td>
+                                        <td>
+                                            <ul>
+                                                <li>Reinforce learning through songs and movement.</li>
+                                                <li>Sing boat action song.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Story Time</td>
+                                        <td>Make-up story: “The Little Boat That Could”</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Goodbye Time</td>
+                                        <td>Wrap up and say farewell.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     <div class="content-card">
@@ -365,78 +369,80 @@
                             </ul>
                         </div>
 
-                        <table class="lesson-table">
-                            <thead>
-                                <tr>
-                                    <th>Routine Activity</th>
-                                    <th>Procedure / Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Arrival / Free Play</td>
-                                    <td>Greet children warmly.</td>
-                                </tr>
-                                <tr>
-                                    <td>Meeting Time</td>
-                                    <td>
-                                        <ul>
-                                            <li>Greeting, attendance, classroom reminders.</li>
-                                            <li>Show 2 to 3 helper pictures and ask: “Who is this? How do they help us?”</li>
-                                            <li>Sing the helpers in our town (to the tune of The Wheels on the Bus).</li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Activity Time</td>
-                                    <td>
-                                        <strong>Activity 1: Match the Helper</strong>
-                                        <ul>
-                                            <li>Helpers: doctor, firefighter, police officer, teacher, baker</li>
-                                            <li>Match with tools/workplaces: stethoscope, hose, badge, books, oven</li>
-                                        </ul>
-                                        <br>
-                                        <strong>Activity 2: My Favorite Helper</strong>
-                                        <ul>
-                                            <li>Children choose 1 helper picture, then add colors to it.</li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Outdoor Playtime</td>
-                                    <td>Free time for outdoor play.</td>
-                                </tr>
-                                <tr>
-                                    <td>Snack Time & Break</td>
-                                    <td>Teach the learners to wash their hands, toothbrushing, changing clothes and cleaning their table.</td>
-                                </tr>
-                                <tr>
-                                    <td>Rest / Nap Time</td>
-                                    <td>Let the learners rest.</td>
-                                </tr>
-                                <tr>
-                                    <td>Circle Time</td>
-                                    <td>
-                                        Show picture cards again.
-                                        <br><br>
-                                        <strong>Question Prompts:</strong>
-                                        <ul>
-                                            <li>Which helper helps when there is a fire?</li>
-                                            <li>Which helper helps when we feel sick?</li>
-                                            <li>How can we help at school?</li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Story Time</td>
-                                    <td>A book about helpers in the community story.</td>
-                                </tr>
-                                <tr>
-                                    <td>Goodbye Time</td>
-                                    <td>Pack up and say goodbye.</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="lesson-table">
+                                <thead>
+                                    <tr>
+                                        <th>Routine Activity</th>
+                                        <th>Procedure / Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Arrival / Free Play</td>
+                                        <td>Greet children warmly.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Meeting Time</td>
+                                        <td>
+                                            <ul>
+                                                <li>Greeting, attendance, classroom reminders.</li>
+                                                <li>Show 2 to 3 helper pictures and ask: “Who is this? How do they help us?”</li>
+                                                <li>Sing the helpers in our town (to the tune of The Wheels on the Bus).</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Activity Time</td>
+                                        <td>
+                                            <strong>Activity 1: Match the Helper</strong>
+                                            <ul>
+                                                <li>Helpers: doctor, firefighter, police officer, teacher, baker</li>
+                                                <li>Match with tools/workplaces: stethoscope, hose, badge, books, oven</li>
+                                            </ul>
+                                            <br>
+                                            <strong>Activity 2: My Favorite Helper</strong>
+                                            <ul>
+                                                <li>Children choose 1 helper picture, then add colors to it.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Outdoor Playtime</td>
+                                        <td>Free time for outdoor play.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Snack Time & Break</td>
+                                        <td>Teach the learners to wash their hands, toothbrushing, changing clothes and cleaning their table.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rest / Nap Time</td>
+                                        <td>Let the learners rest.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Circle Time</td>
+                                        <td>
+                                            Show picture cards again.
+                                            <br><br>
+                                            <strong>Question Prompts:</strong>
+                                            <ul>
+                                                <li>Which helper helps when there is a fire?</li>
+                                                <li>Which helper helps when we feel sick?</li>
+                                                <li>How can we help at school?</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Story Time</td>
+                                        <td>A book about helpers in the community story.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Goodbye Time</td>
+                                        <td>Pack up and say goodbye.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -521,21 +527,52 @@
     </div>
 
     <script>
+        // Sidebar Toggle
+        function toggleSidebar() {
+            var sidebar = document.getElementById("mySidebar");
+            var overlay = document.querySelector(".sidebar-overlay");
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("active");
+        }
+
+        // Close Sidebar (when clicking overlay or nav item)
+        function closeSidebar() {
+            var sidebar = document.getElementById("mySidebar");
+            var overlay = document.querySelector(".sidebar-overlay");
+            sidebar.classList.remove("open");
+            overlay.classList.remove("active");
+        }
+
+        // Show Content Logic
         function showContent(sectionId) {
             document.getElementById('landing-area').style.display = 'none';
             document.getElementById('content-area').style.display = 'block';
+            
             const allSections = document.querySelectorAll('.section-text');
             allSections.forEach(div => div.style.display = 'none');
+            
             document.getElementById(sectionId).style.display = 'block';
+            
             const allBtns = document.querySelectorAll('.spiral-btn');
             allBtns.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            
+            // Mark active button (need event target, slightly complex if called programmatically, but works for clicks)
+            if(event && event.target.classList.contains('spiral-btn')){
+                event.target.classList.add('active');
+            }
+
+            // Close sidebar on mobile after clicking a link
+            if(window.innerWidth <= 768) {
+                closeSidebar();
+            }
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function closeContent() {
             document.getElementById('content-area').style.display = 'none';
             document.getElementById('landing-area').style.display = 'flex';
+            
             const allBtns = document.querySelectorAll('.spiral-btn');
             allBtns.forEach(btn => btn.classList.remove('active'));
         }
@@ -543,10 +580,12 @@
         /* --- LIGHTBOX LOGIC --- */
         var modal = document.getElementById("imageModal");
         var modalImg = document.getElementById("fullImage");
-        // Select all images in the gallery
-        var galleryImages = document.querySelectorAll('.gallery-grid img');
+        
+        // Select all images that should have lightbox (Gallery, DTR, Obs, Rating)
+        // We added cursor: pointer to these in CSS
+        var zoomableImages = document.querySelectorAll('.gallery-grid img, .dtr-img, .obs-img, .rating-img');
 
-        galleryImages.forEach(img => {
+        zoomableImages.forEach(img => {
             img.onclick = function(){
                 modal.style.display = "block";
                 modalImg.src = this.src;

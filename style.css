@@ -19,29 +19,67 @@ body {
     padding: 0;
     background-color: var(--bg-cream);
     color: var(--text-dark);
-    /* Allow body to grow and scroll naturally */
     min-height: 100vh; 
     display: flex;
-    overflow-x: hidden; /* Prevent horizontal scroll only */
-    overflow-y: auto;   /* Allow main browser scrollbar */
+    overflow-x: hidden; 
+    overflow-y: auto;   
+}
+
+/* --- HAMBURGER MENU (MOBILE ONLY) --- */
+.hamburger-btn {
+    display: none; /* Hidden on desktop */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background-color: var(--banner-purple);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Overlay for mobile menu background dimming */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 900;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.sidebar-overlay.active {
+    display: block;
+    opacity: 1;
 }
 
 /* --- LEFT SIDEBAR (Yellow Buttons) --- */
 .sidebar {
     width: 280px; 
-    /* Sticky positioning so it stays visible while you scroll the page */
     position: sticky; 
     top: 0;
-    height: 100vh; /* Fill the screen height */
+    height: 100vh; 
     padding: 20px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 8px; 
     background-color: transparent; 
-    overflow-y: auto; /* Allow sidebar to scroll internally if screen is very short */
-    z-index: 100;
-    flex-shrink: 0; /* Prevent sidebar from shrinking */
+    overflow-y: auto; 
+    z-index: 1000;
+    flex-shrink: 0; 
+    transition: transform 0.3s ease-in-out;
 }
 
 .sidebar::-webkit-scrollbar { display: none; }
@@ -51,7 +89,7 @@ body {
     background-color: var(--spiral-yellow);
     border: none;
     border-radius: 12px;
-    padding: 10px 15px;
+    padding: 12px 15px;
     font-weight: 900; 
     font-size: 0.95rem; 
     letter-spacing: 0.5px;
@@ -85,7 +123,8 @@ body {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    min-height: 100vh; /* Ensure it takes at least full screen */
+    min-height: 100vh;
+    width: 100%; /* Ensure it doesn't overflow horizontally */
 }
 
 /* --- HEADER (Ma'am Bea Text) --- */
@@ -111,14 +150,14 @@ body {
     padding-left: 100px; 
     gap: 100px; 
     z-index: 60; 
-    margin-top: auto; /* Push to bottom of container if space permits */
+    margin-top: auto; 
     padding-bottom: 3px;
 }
 
 /* Specific styling for when inside the landing view */
 .landing-view .social-footer {
     position: absolute;
-    bottom: 3px;
+    bottom: 20px;
     left: 0;
     width: 100%;
 }
@@ -264,6 +303,7 @@ body {
     padding: 30px;
     margin-bottom: 40px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    overflow: hidden; /* Prevent content spill */
 }
 
 .lesson-header-block {
@@ -287,11 +327,19 @@ body {
     border-radius: 8px;
 }
 
+/* Wrapper to make table scrollable on small screens */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 .lesson-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     font-size: 1rem;
+    min-width: 600px; /* Force table to have width so it scrolls */
 }
 
 .lesson-table th, .lesson-table td {
@@ -307,7 +355,7 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     text-align: left;
-    width: 30%; /* Width of the "Routine" column */
+    width: 30%;
 }
 
 .lesson-table td ul {
@@ -320,7 +368,7 @@ body {
 }
 
 /* --- IMAGES (Rating, DTR, Obs) --- */
-.rating-img, .dtr-img {
+.rating-img, .dtr-img, .obs-img {
     width: 100%;
     max-width: 800px; 
     height: auto;
@@ -328,16 +376,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     display: inline-block;
-}
-
-.obs-img {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-bottom: 10px;
+    cursor: pointer; /* Clickable for lightbox */
 }
 
 /* --- DOCUMENTATION GALLERY --- */
@@ -355,7 +395,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    cursor: pointer; /* Makes it look clickable */
+    cursor: pointer;
 }
 
 .gallery-grid img:hover {
@@ -366,73 +406,99 @@ body {
 /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 1100px) {
     .banner-text { font-size: 3.5rem; }
-    .profile-img { height: 65vh; right: -20px; }
-    .header-title { font-size: 2rem; }
+    .profile-img { height: 60vh; right: -20px; }
+    .header-title { font-size: 2rem; margin-left: 20px; }
+    .social-footer { padding-left: 20px; gap: 50px; }
 }
 
 @media (max-width: 768px) {
-    body { flex-direction: column; overflow: auto; }
+    .hamburger-btn { display: flex; } /* Show hamburger */
+    
+    /* Sidebar becomes a drawer */
     .sidebar { 
-        width: 100%; 
-        height: auto; 
-        position: relative; /* Not sticky on mobile */
-        flex-direction: row; 
-        overflow-x: auto; 
-        padding: 15px; 
-        gap: 10px; 
-    }
-    .spiral-btn { width: auto; font-size: 0.9rem; padding: 10px 15px; }
-    .profile-img { display: none; }
-    .purple-banner { width: 100%; height: 300px; padding-left: 0; text-align: center; align-items: center; }
-    .banner-text { font-size: 2.8rem; margin-left: 0; }
-    
-    .header-title { margin-top: 10px; font-size: 1.8rem; margin-left: 0; text-align: center; }
-    
-    .social-footer { 
-        position: relative; 
-        bottom: auto; 
-        margin-top: 20px; 
-        padding-bottom: 20px;
-        justify-content: center; 
-        padding-left: 0; 
-    }
-    .social-footer i { font-size: 2.5rem; }
-    
-    .lesson-table th, .lesson-table td {
-        display: block;
-        width: 100%;
-    }
-    .lesson-table th {
-        background-color: #f0f0f0;
-        color: var(--banner-purple);
+        position: fixed;
+        left: -300px; /* Hide off-screen */
+        width: 260px;
+        background-color: #fdfbf7; /* Needs solid bg */
+        box-shadow: 4px 0 10px rgba(0,0,0,0.2);
     }
     
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    .sidebar.open {
+        transform: translateX(300px); /* Slide in */
     }
-}
 
-@keyframes slideUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    .main-stage {
+        padding: 5px;
+    }
+
+    .header-title {
+        margin-left: 0;
+        margin-top: 60px; /* Space for hamburger */
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    .purple-banner {
+        width: 100%;
+        height: 400px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .banner-text {
+        font-size: 2.5rem;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    /* Hide big profile image on small mobile to allow text focus, 
+       or make it small and relative */
+    .profile-img {
+        display: none; 
+    }
+
+    .social-footer {
+        justify-content: center;
+        padding-left: 0;
+        position: relative;
+        bottom: auto;
+        margin-top: 20px;
+        gap: 30px;
+    }
+    
+    .content-view {
+        width: 98%;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Adjust Grid for mobile */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+    
+    /* Stack CV Columns */
+    .cv-columns {
+        flex-direction: column;
+    }
 }
 
 /* --- LIGHTBOX MODAL STYLES --- */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2000; /* Sit on top of everything */
-    padding-top: 50px; /* Location of the box */
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    padding-top: 50px; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9); 
 }
 
-/* Modal Content (Image) */
 .modal-content {
     margin: auto;
     display: block;
@@ -442,17 +508,13 @@ body {
     object-fit: contain;
     animation-name: zoom;
     animation-duration: 0.6s;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
-/* Add Animation */
 @keyframes zoom {
     from {transform:scale(0)} 
     to {transform:scale(1)}
 }
 
-/* The Close Button */
 .close {
     position: absolute;
     top: 20px;
@@ -464,14 +526,12 @@ body {
     z-index: 2001;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
 }
 
-/* Responsive modal for smaller screens */
 @media only screen and (max-width: 700px){
     .modal-content {
         width: 95%;

@@ -464,10 +464,12 @@ body {
         height: 35vh;   /* Smaller height */
         width: auto;
         position: absolute;
-        bottom: 0;      /* Stick to bottom of purple banner */
+        /* FIX: Move it down to overlap the icons */
+        bottom: -40px;  
         right: 50%;     /* Center horizontally... */
         transform: translateX(50%); /* ...using transform */
-        z-index: 10;
+        /* FIX: Ensure it is on top of the social icons (which are z-60) */
+        z-index: 70;
     }
 
     .social-footer {
@@ -477,6 +479,8 @@ body {
         bottom: auto;
         margin-top: 20px;
         gap: 30px;
+        /* Ensure icons are lower than the image */
+        z-index: 60; 
     }
     
     .content-view {

@@ -124,7 +124,7 @@ body {
     flex-direction: column;
     padding: 10px;
     min-height: 100vh;
-    width: 100%; /* Ensure it doesn't overflow horizontally */
+    width: 100%;
 }
 
 /* --- HEADER (Ma'am Bea Text) --- */
@@ -226,7 +226,7 @@ body {
 .text-green { color: var(--text-green); text-shadow: 4px 4px 0 rgba(0,0,0,0.2); }
 
 
-/* The Profile Image */
+/* The Profile Image (Desktop Default) */
 .profile-img {
     position: absolute;
     bottom: 0;
@@ -303,7 +303,7 @@ body {
     padding: 30px;
     margin-bottom: 40px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    overflow: hidden; /* Prevent content spill */
+    overflow: hidden; 
 }
 
 .lesson-header-block {
@@ -339,7 +339,7 @@ body {
     border-collapse: collapse;
     margin-top: 20px;
     font-size: 1rem;
-    min-width: 600px; /* Force table to have width so it scrolls */
+    min-width: 600px; 
 }
 
 .lesson-table th, .lesson-table td {
@@ -377,7 +377,7 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     display: inline-block;
     margin-bottom: 10px;
-    cursor: pointer; /* Clickable for lightbox */
+    cursor: pointer; 
 }
 
 /* --- DOCUMENTATION GALLERY --- */
@@ -412,19 +412,19 @@ body {
 }
 
 @media (max-width: 768px) {
-    .hamburger-btn { display: flex; } /* Show hamburger */
+    .hamburger-btn { display: flex; } 
     
     /* Sidebar becomes a drawer */
     .sidebar { 
         position: fixed;
-        left: -300px; /* Hide off-screen */
+        left: -300px; 
         width: 260px;
-        background-color: #fdfbf7; /* Needs solid bg */
+        background-color: #fdfbf7; 
         box-shadow: 4px 0 10px rgba(0,0,0,0.2);
     }
     
     .sidebar.open {
-        transform: translateX(300px); /* Slide in */
+        transform: translateX(300px); 
     }
 
     .main-stage {
@@ -433,30 +433,41 @@ body {
 
     .header-title {
         margin-left: 0;
-        margin-top: 60px; /* Space for hamburger */
+        margin-top: 70px; 
         text-align: center;
         font-size: 1.8rem;
     }
 
+    /* Adjust Banner for Mobile */
     .purple-banner {
         width: 100%;
-        height: 400px;
-        padding-left: 20px;
-        padding-right: 20px;
+        height: 500px; /* Taller to fit text + image stacked */
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 40px;
         text-align: center;
-        align-items: center;
+        align-items: flex-start; /* Start text at top */
+        justify-content: flex-start;
     }
 
     .banner-text {
         font-size: 2.5rem;
         margin-left: 0;
+        width: 100%;
         text-align: center;
+        margin-top: 20px;
     }
 
-    /* Hide big profile image on small mobile to allow text focus, 
-       or make it small and relative */
+    /* --- MOBILE IMAGE FIX --- */
     .profile-img {
-        display: none; 
+        display: block; /* Visible! */
+        height: 35vh;   /* Smaller height */
+        width: auto;
+        position: absolute;
+        bottom: 0;      /* Stick to bottom of purple banner */
+        right: 50%;     /* Center horizontally... */
+        transform: translateX(50%); /* ...using transform */
+        z-index: 10;
     }
 
     .social-footer {
@@ -474,12 +485,10 @@ body {
         margin-bottom: 20px;
     }
 
-    /* Adjust Grid for mobile */
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     }
     
-    /* Stack CV Columns */
     .cv-columns {
         flex-direction: column;
     }

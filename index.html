@@ -211,7 +211,7 @@
                     <div style="margin-bottom: 40px; border-bottom: 1px dashed #ccc; padding-bottom: 30px;">
                         <h3 style="color: #8B5CF6; margin-bottom: 15px;">Journal Entry 2: Family Day at La Paz Plaza</h3>
                         <div style="font-size: 1.05rem; line-height: 1.8; color: #444;">
-                            <p>Today we had our Family Day at La Paz Plaza, where Bahay Bulilit joined other daycare centers from different districts in the city. It felt exciting to see so many learners, teachers, and parents gathered in one place. Each district had a chance to showcase the children’s talents, and it was heartwarming to watch them perform with confidence while the adults cheered them on. You could really feel the support and pride from the families.</p>
+                            <p>Today we had our Family Day at La Paz Plaza, where Bahay Bulilit joined other daycare centers from different districts in the city. It was exciting to see so many learners, teachers, and parents gathered in one place. Each district had a chance to showcase the children’s talents, and it was heartwarming to watch them perform with confidence while the adults cheered them on. You could really feel the support and pride from the families.</p>
                             <p>There were also different games prepared, and the children were clearly enjoying the activities. Even in a busy and open environment, the teachers and parents worked together to guide the learners and keep them safe. I noticed how events like this help children practice social skills, teamwork, and courage, especially when they are surrounded by a bigger crowd than usual.</p>
                             <p>The plaza was an open space, so it was quite hot, but the fun energy made it easier to enjoy the day. One of the best parts was the free lunch prepared by the parents. The food was delicious, and it showed the effort and cooperation of the families to make the event successful. Overall, Family Day was a meaningful experience because it strengthened the connection between home and school, and it reminded me that learning also happens through community activities, not only inside the classroom.</p>
                         </div>
@@ -556,7 +556,7 @@
             const allBtns = document.querySelectorAll('.spiral-btn');
             allBtns.forEach(btn => btn.classList.remove('active'));
             
-            // Mark active button (need event target, slightly complex if called programmatically, but works for clicks)
+            // Mark active button 
             if(event && event.target.classList.contains('spiral-btn')){
                 event.target.classList.add('active');
             }
@@ -582,7 +582,6 @@
         var modalImg = document.getElementById("fullImage");
         
         // Select all images that should have lightbox (Gallery, DTR, Obs, Rating)
-        // We added cursor: pointer to these in CSS
         var zoomableImages = document.querySelectorAll('.gallery-grid img, .dtr-img, .obs-img, .rating-img');
 
         zoomableImages.forEach(img => {

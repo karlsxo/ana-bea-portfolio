@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ana Bea's E-Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 
     <div class="sidebar-overlay" onclick="closeSidebar()"></div>
 
-    <nav class="sidebar" id="mySidebar">
+    <nav class="sidebar" id="mySidebar"><div class="sidebar-brand">Ana Bea E-Portfolio</div>
         <button class="spiral-btn" onclick="showContent('intro')">Introduction</button>
         <button class="spiral-btn" onclick="showContent('ack')">Acknowledgements</button>
         <button class="spiral-btn" onclick="showContent('cv')">Curriculum Vitae</button>
@@ -83,7 +83,7 @@
                 <div id="cv" class="section-text" style="display:none;">
                     <h2>Curriculum Vitae</h2>
                     <div style="background-color: #fff; border: 1px solid #ddd; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                        <div style="text-align: center; border-bottom: 2px solid #8B5CF6; padding-bottom: 20px; margin-bottom: 20px;">
+                        <div style="text-align: center; border-bottom: 2px solid #111; padding-bottom: 20px; margin-bottom: 20px;">
                             <h1 style="margin: 0; color: #333; text-transform: uppercase;">Ana Bea F. Montenegro</h1>
                             <p style="margin: 5px 0 0; color: #666; font-size: 1.2rem;">School Teacher</p>
                             <div style="margin-top: 10px; font-size: 0.95rem; color: #555;">
@@ -93,12 +93,12 @@
                         </div>
 
                         <div style="margin-bottom: 30px;">
-                            <h3 style="color: #8B5CF6; border-left: 4px solid #FCD34D; padding-left: 10px; margin-bottom: 10px;">About Me</h3>
+                            <h3 style="color: #111; border-left: 4px solid #111; padding-left: 10px; margin-bottom: 10px;">About Me</h3>
                             <p style="color: #444; line-height: 1.6;">Aspiring Early Childhood Educator who enjoys working with young children and supporting their learning through play, routines, and gentle guidance. During my internship, I assisted in daily classroom activities, prepared learning materials, and observed how children grow in confidence, communication, and social skills. I value patience, kindness, and clear communication, and I aim to help create a safe, happy classroom where every child feels seen and encouraged to learn.</p>
                         </div>
 
                         <div style="margin-bottom: 30px;">
-                            <h3 style="color: #8B5CF6; border-left: 4px solid #FCD34D; padding-left: 10px; margin-bottom: 15px;">Education</h3>
+                            <h3 style="color: #111; border-left: 4px solid #111; padding-left: 10px; margin-bottom: 15px;">Education</h3>
                             <div style="margin-bottom: 15px;">
                                 <h4 style="margin: 0; color: #333;">Post Baccalaureate Degree in Early Childhood Education</h4>
                                 <div style="display: flex; justify-content: space-between; color: #666; font-size: 0.95rem;">
@@ -114,7 +114,7 @@
                         </div>
 
                         <div style="margin-bottom: 30px;">
-                            <h3 style="color: #8B5CF6; border-left: 4px solid #FCD34D; padding-left: 10px; margin-bottom: 15px;">Work Experience</h3>
+                            <h3 style="color: #111; border-left: 4px solid #111; padding-left: 10px; margin-bottom: 15px;">Work Experience</h3>
                             <div style="margin-bottom: 20px;">
                                 <h4 style="margin: 0; color: #333;">Assistant Manager</h4>
                                 <div style="display: flex; justify-content: space-between; color: #666; font-style: italic; font-size: 0.95rem; margin-bottom: 5px;">
@@ -140,13 +140,13 @@
 
                         <div class="cv-columns" style="display: flex; gap: 30px; flex-wrap: wrap;">
                             <div style="flex: 1; min-width: 250px;">
-                                <h3 style="color: #8B5CF6; border-left: 4px solid #FCD34D; padding-left: 10px; margin-bottom: 10px;">Hobbies</h3>
+                                <h3 style="color: #111; border-left: 4px solid #111; padding-left: 10px; margin-bottom: 10px;">Hobbies</h3>
                                 <ul style="list-style-type: square; color: #444; padding-left: 20px;">
                                     <li>Singing</li><li>Dancing</li><li>Reading</li><li>Watching Movies</li>
                                 </ul>
                             </div>
                             <div style="flex: 1; min-width: 250px;">
-                                <h3 style="color: #8B5CF6; border-left: 4px solid #FCD34D; padding-left: 10px; margin-bottom: 10px;">References</h3>
+                                <h3 style="color: #111; border-left: 4px solid #111; padding-left: 10px; margin-bottom: 10px;">References</h3>
                                 <div style="margin-bottom: 10px;">
                                     <strong>Kiyota Watanabe</strong><br><span style="color: #666; font-size: 0.9rem;">Grow Forward JP Inc. | Manager</span><br><span style="font-size: 0.9rem;">0929 340 0939 | admin@grow-fwd.com</span>
                                 </div>
@@ -170,29 +170,29 @@
                     <h2>Recent Issues and Trends in ECE Professional Readings</h2>
 
                     <div class="content-card">
-                        <h3 style="color: #8B5CF6; margin-top: 0;">Professional Reading 1</h3>
+                        <h3 style="color: #111; margin-top: 0;">Professional Reading 1</h3>
                         <h4 style="margin: 10px 0 5px; color: #333;">Title: Behind the Slow Start: An Assessment of Early Childhood Care and Development in the Philippines</h4>
                         <p style="font-style: italic; color: #666; margin-bottom: 15px;">Source: Philippine Institute for Development Studies (PIDS, 2024)</p>
                         <div style="margin-bottom: 15px;">
-                            <strong style="color: #005f73;">Summary:</strong>
+                            <strong style="color: #111;">Summary:</strong>
                             <p style="margin-top: 5px; line-height: 1.6; color: #444;">This study evaluates the state of early childhood education (ECE) in the Philippines, emphasizing disparities in access and quality across regions. It identifies issues such as the shortage of child development centers, insufficiently trained teachers, and uneven participation among 3- to 4-year-olds. The report highlights that while policies like the ECCD Act aim to ensure accessibility, implementation remains inconsistent due to funding gaps and limited local government capacity. PIDS recommends stronger national coordination, continuous teacher training, and targeted investments to achieve universal access to quality ECE.</p>
                         </div>
                         <div>
-                            <strong style="color: #005f73;">Reflection:</strong>
+                            <strong style="color: #111;">Reflection:</strong>
                             <p style="margin-top: 5px; line-height: 1.6; color: #444;">This reading shows that even with solid policies, early childhood education in the Philippines still faces implementation challenges. As a future educator or program developer, I realized that improving early education isn’t just about curriculum, it also requires systemic support, funding, and community engagement. The study inspired me to think about how educators can advocate for resources and collaborate with local governments to ensure every child receives equal opportunities to learn during their formative years.</p>
                         </div>
                     </div>
 
                     <div class="content-card">
-                        <h3 style="color: #8B5CF6; margin-top: 0;">Professional Reading 2</h3>
+                        <h3 style="color: #111; margin-top: 0;">Professional Reading 2</h3>
                         <h4 style="margin: 10px 0 5px; color: #333;">Title: Investing in the Early Years to Boost Human Capital in the Philippines</h4>
                         <p style="font-style: italic; color: #666; margin-bottom: 15px;">Source: World Bank (June 2024)</p>
                         <div style="margin-bottom: 15px;">
-                            <strong style="color: #005f73;">Summary:</strong>
+                            <strong style="color: #111;">Summary:</strong>
                             <p style="margin-top: 5px; line-height: 1.6; color: #444;">The World Bank report stresses that investments in the early years—especially in health, nutrition, and education—are vital for long-term national development. It emphasizes that early childhood programs build the foundation for cognitive, emotional, and social skills necessary for lifelong learning. The report calls for more inter-agency coordination and budget prioritization to ensure that children under five receive comprehensive early care and learning support. It also links early childhood outcomes to future productivity and economic growth.</p>
                         </div>
                         <div>
-                            <strong style="color: #005f73;">Reflection:</strong>
+                            <strong style="color: #111;">Reflection:</strong>
                             <p style="margin-top: 5px; line-height: 1.6; color: #444;">This reading helped me understand how early childhood education is not just a school concern but a national priority. It broadened my view that developing young learners strengthens the country’s human capital and competitiveness. As an educator, this pushes me to promote holistic child development—balancing academic, emotional, and health aspects. It also motivates me to support policies that treat ECE as a long-term investment, not merely a social service.</p>
                         </div>
                     </div>
@@ -201,7 +201,7 @@
                 <div id="journals" class="section-text" style="display:none;">
                     <h2>Daily Journals</h2>
                     <div style="margin-bottom: 40px; border-bottom: 1px dashed #ccc; padding-bottom: 30px;">
-                        <h3 style="color: #8B5CF6; margin-bottom: 15px;">Journal Entry 1: First Day at the Center</h3>
+                        <h3 style="color: #111; margin-bottom: 15px;">Journal Entry 1: First Day at the Center</h3>
                         <div style="font-size: 1.05rem; line-height: 1.8; color: #444;">
                             <p>Today was my first day at Bahay Bulilit, and I felt a mix of excitement and nervousness. As soon as I arrived, I noticed how welcoming everyone was. The teachers and staff greeted me warmly, and even the parents were friendly and approachable. Some parents introduced themselves and asked about my role, which made me feel included right away. I also met the PTA President, and it reminded me how important parent involvement is in a daycare setting.</p>
                             <p>A usual day in the center follows simple routines that help children feel safe and organized. The day started with greetings and settling in, then short learning activities through songs, stories, and guided tasks. There was also snack time where children practiced good habits like handwashing, sharing, and cleaning up. Throughout the day, I observed how the teacher used gentle reminders and clear instructions to guide the children.</p>
@@ -209,7 +209,7 @@
                         </div>
                     </div>
                     <div style="margin-bottom: 40px; border-bottom: 1px dashed #ccc; padding-bottom: 30px;">
-                        <h3 style="color: #8B5CF6; margin-bottom: 15px;">Journal Entry 2: Family Day at La Paz Plaza</h3>
+                        <h3 style="color: #111; margin-bottom: 15px;">Journal Entry 2: Family Day at La Paz Plaza</h3>
                         <div style="font-size: 1.05rem; line-height: 1.8; color: #444;">
                             <p>Today we had our Family Day at La Paz Plaza, where Bahay Bulilit joined other daycare centers from different districts in the city. It was exciting to see so many learners, teachers, and parents gathered in one place. Each district had a chance to showcase the children’s talents, and it was heartwarming to watch them perform with confidence while the adults cheered them on. You could really feel the support and pride from the families.</p>
                             <p>There were also different games prepared, and the children were clearly enjoying the activities. Even in a busy and open environment, the teachers and parents worked together to guide the learners and keep them safe. I noticed how events like this help children practice social skills, teamwork, and courage, especially when they are surrounded by a bigger crowd than usual.</p>
@@ -217,7 +217,7 @@
                         </div>
                     </div>
                     <div style="margin-bottom: 40px; border-bottom: 1px dashed #ccc; padding-bottom: 30px;">
-                        <h3 style="color: #8B5CF6; margin-bottom: 15px;">Journal Entry 3: Children’s Month Celebration and McDonald’s Free Lunch</h3>
+                        <h3 style="color: #111; margin-bottom: 15px;">Journal Entry 3: Children’s Month Celebration and McDonald’s Free Lunch</h3>
                         <div style="font-size: 1.05rem; line-height: 1.8; color: #444;">
                             <p>Today, our center received free lunch from McDonald’s as part of the celebration of Children’s Month. It was a special day for the learners because they were excited to receive a Happy Meal, and it also reminded me why Bahay Bulilit is connected to the McDonald’s Foundation program. The children kept asking questions and looking forward to the lunch, and you could really feel their excitement.</p>
                             <p>However, there were some issues with communication and coordination. The arrangement was not planned smoothly, so the learners ended up waiting for a long time. I noticed that waiting can be challenging in a daycare setting because children have short attention spans and easily become restless. The teachers did their best to keep them calm through reminders, simple activities, and patience while we waited for the lunch to arrive.</p>
@@ -225,7 +225,7 @@
                         </div>
                     </div>
                     <div style="margin-bottom: 40px;">
-                        <h3 style="color: #8B5CF6; margin-bottom: 15px;">Journal Entry 4: My Last Demo on Water Transportation</h3>
+                        <h3 style="color: #111; margin-bottom: 15px;">Journal Entry 4: My Last Demo on Water Transportation</h3>
                         <div style="font-size: 1.05rem; line-height: 1.8; color: #444;">
                             <p>Today was my last demo teaching at the center, and I felt a mix of excitement and nervousness. My lesson was about water transportation, and I prepared the materials and activities carefully because I wanted it to be meaningful and enjoyable for the learners. Before starting, I reminded myself to stay calm, speak clearly, and focus on guiding the children step by step.</p>
                             <p>Even though I have been staying in the center for quite some time, I noticed something that made me smile. Some learners still called me “tita” instead of “ma’am.” At first, I wondered why, but I realized it is because they are very used to the presence of my resource teacher and they naturally connect “ma’am” with her. Instead of feeling discouraged, I took it as a sign that the children feel comfortable with me. In a daycare setting, being called “tita” can also mean that the learners see you as someone safe and familiar.</p>
@@ -238,7 +238,7 @@
                 <div id="observation" class="section-text" style="display:none;">
                     <h2>Classroom Observational Tools</h2>
                     <div class="content-card">
-                        <h3 style="color: #8B5CF6; margin-top: 0; margin-bottom: 20px;">Observation Reports</h3>
+                        <h3 style="color: #111; margin-top: 0; margin-bottom: 20px;">Observation Reports</h3>
                         <p style="margin-bottom: 30px; color: #555;">Below are the copies of the observation tools completed during my internship sessions.</p>
                         
                         <div style="display: flex; flex-direction: column; gap: 30px; align-items: center;">
@@ -449,11 +449,11 @@
                 <div id="demos" class="section-text" style="display:none;">
                     <h2>Teaching Demonstrations</h2>
                     <div class="content-card">
-                        <h3 style="color: #8B5CF6; margin-top: 0;">Demo Teaching Videos</h3>
+                        <h3 style="color: #111; margin-top: 0;">Demo Teaching Videos</h3>
                         <p style="font-size: 1.1rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
                             Please click the Google Drive link below to watch my teaching demonstration videos.
                         </p>
-                        <a href="https://drive.google.com/drive/folders/1pclPcbtpltcxpv5gA3WR8lOOIc4mGMpO?usp=sharing" target="_blank" style="display: inline-block; background-color: #8B5CF6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.3s;">
+                        <a href="https://drive.google.com/drive/folders/1pclPcbtpltcxpv5gA3WR8lOOIc4mGMpO?usp=sharing" target="_blank" style="display: inline-block; background-color: #111; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.3s;">
                             <i class="fab fa-google-drive"></i> Watch Videos on Google Drive
                         </a>
                     </div>
@@ -462,7 +462,7 @@
                 <div id="dtr" class="section-text" style="display:none;">
                     <h2>Daily Time Records</h2>
                     <div class="content-card"> 
-                        <h3 style="color: #8B5CF6; margin-top: 0; margin-bottom: 20px;">Attendance Records</h3>
+                        <h3 style="color: #111; margin-top: 0; margin-bottom: 20px;">Attendance Records</h3>
                         <p style="margin-bottom: 30px; color: #555;">Here are the copies of my Daily Time Records (DTR) documenting my internship hours.</p>
 
                         <div style="text-align: center; display: flex; flex-direction: column; gap: 30px; align-items: center;">
@@ -476,7 +476,7 @@
                 <div id="rating" class="section-text" style="display:none;">
                     <h2>Rating Sheets</h2>
                     <div class="content-card">
-                        <h3 style="color: #8B5CF6; margin-top: 0; margin-bottom: 20px;">Performance Rating</h3>
+                        <h3 style="color: #111; margin-top: 0; margin-bottom: 20px;">Performance Rating</h3>
                         <p style="margin-bottom: 30px; color: #555;">Below is the copy of my rating sheet from my cooperating teacher.</p>
 
                         <div style="text-align: center;">

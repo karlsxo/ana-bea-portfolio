@@ -1,13 +1,61 @@
-/* --- CSS STYLES --- */
+/* ==========================================================================
+   MA'AM BEA'S PORTFOLIO — MODERN MINIMALIST (BLACK & WHITE)
+   Redesigned with a monochrome palette and smooth hover/transition motion.
+   ========================================================================== */
+
 :root {
-    --bg-cream: #ece7d9; 
-    --spiral-yellow: #FCD34D; 
-    --banner-purple: #8B5CF6; 
-    --text-yellow: #FDE047; 
-    --text-green: #4ADE80; 
-    --text-dark: #333;
-    --table-border: #ddd;
+    /* --- Monochrome palette --- */
+    --clr-white:    #ffffff;
+    --clr-offwhite: #fafafa;
+    --clr-light:    #f2f2f2;
+    --clr-mist:     #e8e8e8;
+    --clr-line:     #dedede;
+    --clr-gray:     #8a8a8a;
+    --clr-midgray:  #5a5a5a;
+    --clr-ink:      #111111;   /* primary text */
+    --clr-softink:  #3d3d3d;   /* secondary text */
+
+    /* --- Motion --- */
+    --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --dur-fast: 0.2s;
+    --dur:      0.35s;
+    --dur-slow: 0.6s;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+/* --- Base --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--clr-offwhite);
+    color: var(--clr-ink);
+    min-height: 100vh;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+::selection {
+    background: var(--clr-ink);
+    color: var(--clr-white);
+}
+
+/* Custom scrollbar for a refined feel */
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: var(--clr-mist); }
+::-webkit-scrollbar-thumb { background: var(--clr-gray); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--clr-ink); }
 
 * {
     box-sizing: border-box;
@@ -25,24 +73,47 @@ body {
     overflow-y: auto;   
 }
 
-/* --- HAMBURGER MENU (MOBILE ONLY) --- */
+/* --- ANIMATION HELPERS --- */
+.fade-up {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+}
+.fade-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- HAMBURGER MENU (MOBILE) --- */
 .hamburger-btn {
-    display: none; /* Hidden on desktop */
+    display: none;
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 18px;
+    left: 18px;
     z-index: 1100;
-    background-color: var(--banner-purple);
-    color: white;
-    border: none;
+    background-color: var(--clr-ink);
+    color: var(--clr-white);
+    border: 1px solid var(--clr-ink);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
+    width: 52px;
+    height: 52px;
+    font-size: 1.35rem;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.14);
+    display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color var(--dur) var(--ease),
+                transform var(--dur) var(--ease),
+                box-shadow var(--dur) var(--ease);
+}
+.hamburger-btn:hover {
+    background-color: var(--clr-offwhite);
+    transform: rotate(90deg) scale(1.06);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+}
+.hamburger-btn:active {
+    transform: scale(0.9);
 }
 
 /* Overlay for mobile menu background dimming */
@@ -53,10 +124,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.45);
     z-index: 900;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity var(--dur) var(--ease);
+    backdrop-filter: blur(2px);
 }
 
 .sidebar-overlay.active {
@@ -64,57 +136,113 @@ body {
     opacity: 1;
 }
 
-/* --- LEFT SIDEBAR (Yellow Buttons) --- */
+/* --- LEFT SIDEBAR (Minimalist vertical nav) --- */
 .sidebar {
-    width: 280px; 
-    position: sticky; 
+    width: 260px;
+    position: sticky;
     top: 0;
-    height: 100vh; 
-    padding: 20px 10px;
+    height: 100vh;
+    padding: 40px 18px 40px 18px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 8px; 
-    background-color: transparent; 
-    overflow-y: auto; 
+    justify-content: flex-start;
+    gap: 6px;
+    background-color: var(--clr-offwhite);
+    border-right: 1px solid var(--clr-line);
+    overflow-y: auto;
     z-index: 1000;
-    flex-shrink: 0; 
-    transition: transform 0.3s ease-in-out;
+    flex-shrink: 0;
+    transition: transform var(--dur) var(--ease);
 }
 
 .sidebar::-webkit-scrollbar { display: none; }
 .sidebar { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* Sidebar brand mark */
+.sidebar-brand {
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--clr-ink);
+    padding: 14px 0 14px 14px;
+    border-bottom: 1px solid var(--clr-line);
+    margin-bottom: 14px;
+    user-select: none;
+}
+.sidebar-brand::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--clr-ink);
+    margin-top: 6px;
+    transition: width var(--dur) var(--ease);
+}
+.sidebar-brand:hover::after { width: 60px; }
+
+/* Minimalist nav link — thin underline sweep on hover */
 .spiral-btn {
-    background-color: var(--spiral-yellow);
+    position: relative;
+    background: transparent;
     border: none;
-    border-radius: 12px;
-    padding: 12px 15px;
-    font-weight: 900; 
-    font-size: 0.95rem; 
-    letter-spacing: 0.5px;
-    color: #4a3b32; 
-    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    padding: 11px 14px;
+    font-weight: 500;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    color: var(--clr-midgray);
+    font-family: inherit;
     cursor: pointer;
     text-align: left;
-    transition: transform 0.2s, width 0.2s, background-color 0.2s;
-    box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
-    width: 92%; 
     white-space: nowrap;
+    transition: color var(--dur) var(--ease),
+                padding-left var(--dur-slow) var(--ease);
+}
+
+.spiral-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    height: 2px;
+    width: 0;
+    background: var(--clr-ink);
+    transition: width var(--dur-slow) var(--ease);
 }
 
 .spiral-btn:hover {
-    width: 100%; 
-    background-color: #fbbf24;
-    transform: translateX(5px);
+    color: var(--clr-ink);
+    padding-left: 22px;
+}
+.spiral-btn:hover::before {
+    width: 100%;
 }
 
+/* Active state — filled bar */
 .spiral-btn.active {
-    width: 100%;
-    background-color: var(--banner-purple);
-    color: white;
-    box-shadow: none;
+    color: var(--clr-ink);
+    background: var(--clr-light);
+    padding-left: 18px;
 }
+.spiral-btn.active::before {
+    width: 100%;
+    background: var(--clr-ink);
+}
+.spiral-btn.active::after {
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--clr-ink);
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity var(--dur) var(--ease);
+}
+.spiral-btn.active:hover::after { opacity: 1; }
 
 /* --- RIGHT MAIN AREA --- */
 .main-stage {
@@ -127,21 +255,33 @@ body {
     width: 100%;
 }
 
-/* --- HEADER (Ma'am Bea Text) --- */
+/* --- HEADER --- */
 .header-title {
-    margin-left: 100px;
-    margin-top: 20px;
-    font-family: 'Comic Sans MS', sans-serif;
-    font-size: 3rem;
-    font-weight: 900;
-    color: #333;
-    padding-top: 15px;
-    margin-bottom: 30px; 
+    margin-left: 60px;
+    margin-top: 18px;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    color: var(--clr-ink);
+    padding-top: 14px;
+    margin-bottom: 30px;
     z-index: 50;
-    text-shadow: 2px 2px 0px rgba(255,255,255,0.5); 
+    position: relative;
+    transition: letter-spacing var(--dur-slow) var(--ease);
 }
+.header-title::after {
+    content: '';
+    position: absolute;
+    left: 60px;
+    bottom: 6px;
+    height: 2px;
+    width: 7%;
+    background: var(--clr-ink);
+    transition: width var(--dur-slow) var(--ease);
+}
+.header-title:hover::after { width: 16%; }
 
 /* --- FOOTER (Social Icons) --- */
 .social-footer {

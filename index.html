@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ana Bea's E-Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- ==================== MOBILE MENU (HAMBURGER) ==================== -->
     <button class="hamburger-btn" onclick="toggleSidebar()">
         <i class="fas fa-bars"></i>
     </button>
 
     <div class="sidebar-overlay" onclick="closeSidebar()"></div>
 
+    <!-- ==================== SIDEBAR NAVIGATION ==================== -->
     <nav class="sidebar" id="mySidebar"><div class="sidebar-brand">Ana Bea E-Portfolio</div>
         <button class="spiral-btn" onclick="showContent('intro')">Introduction</button>
         <button class="spiral-btn" onclick="showContent('ack')">Acknowledgements</button>
@@ -31,23 +36,28 @@
         <button class="spiral-btn" onclick="showContent('docs')">Documentation</button>
     </nav>
 
+    <!-- ==================== MAIN STAGE ==================== -->
     <div class="main-stage">
         
         <div class="header-title">MA'AM BEA'S PORTFOLIO</div>
 
         <div class="display-container">
             
+            <!-- ============ LANDING / HERO ============ -->
             <div id="landing-area" class="landing-view">
+                <!-- Promo headline (masked line-reveal animation) -->
                 <div class="purple-banner">
                     <div class="banner-text">
-                        <span class="text-yellow">LEARNING</span><br>
-                        <span class="text-green">THROUGH</span><br>
-                        <span class="text-green">LITTLE EYES</span>
+                        <span class="line-mask"><span class="text-yellow">LEARNING</span></span>
+                        <span class="line-mask"><span class="text-green">THROUGH</span></span>
+                        <span class="line-mask"><span class="text-green">LITTLE EYES</span></span>
                     </div>
                 </div>
                 
+                <!-- Portrait (grayscale -> full color on hover) -->
                 <img src="AnaBea.png" alt="Ma'am Bea" class="profile-img">
 
+                <!-- Social links -->
                 <div class="social-footer">
                     <i class="fab fa-instagram" title="Instagram"></i>
                     <i class="fab fa-facebook" title="Facebook"></i>
@@ -55,6 +65,7 @@
                 </div>
             </div>
 
+            <!-- ============ CONTENT SECTIONS (opened from the sidebar) ============ -->
             <div id="content-area" class="content-view">
                 
                 <button class="home-btn" onclick="closeContent()">
@@ -529,11 +540,13 @@
         </div>
     </div>
 
+    <!-- ==================== LIGHTBOX MODAL ==================== -->
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="fullImage">
     </div>
 
+    <!-- ==================== SITE SCRIPTS ==================== -->
     <script>
         // Sidebar Toggle
         function toggleSidebar() {
